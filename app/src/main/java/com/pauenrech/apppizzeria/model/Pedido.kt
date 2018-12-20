@@ -3,7 +3,7 @@ package com.pauenrech.apppizzeria.model
 import java.io.Serializable
 import kotlin.properties.Delegates
 
-class Pedido(var hamburguesaSeleccionada: Hamburguesa) : Serializable {
+class Pedido(var hamburguesaSeleccionada: Hamburguesa) {
 
     var listaAcompañamientos: MutableMap<String,Double> = mutableMapOf()
     var listaIngredientes: MutableMap<String,Double> = mutableMapOf()

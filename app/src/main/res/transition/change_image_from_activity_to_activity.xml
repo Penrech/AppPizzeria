@@ -3,4 +3,11 @@
 
     <changeBounds android:interpolator="@android:interpolator/fast_out_slow_in"
                   android:duration="@android:integer/config_shortAnimTime"/>
+
+    <changeImageTransform
+            android:interpolator="@android:interpolator/fast_out_slow_in"
+            android:duration="@android:integer/config_shortAnimTime"
+    ></changeImageTransform>
+
+
 </transitionSet>

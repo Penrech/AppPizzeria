@@ -8,18 +8,14 @@ import com.pauenrech.apppizzeria.data.HamburguesaListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.menu_layout.*
 import android.content.Intent
-import android.graphics.Bitmap
-import android.support.v4.util.LruCache
-import android.util.Log
-import android.view.animation.Animation
-import android.widget.ImageView
+import com.pauenrech.apppizzeria.viewHolders.HamburguesaViewHolder
 import com.pauenrech.apppizzeria.model.Hamburguesa
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaListAdapterClickListener {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<HamburguesaListAdapter.ViewHolder>? = null
+    private var adapter: RecyclerView.Adapter<HamburguesaViewHolder>? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         rellenarListaIngredientes()
 
         layoutManager = LinearLayoutManager(this)
-        adapter = HamburguesaListAdapter(this)
+        adapter = HamburguesaListAdapter(ListaHamburgesas.hamburguesas!!,this)
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager
@@ -56,13 +52,13 @@ class MainActivity : AppCompatActivity() {
     fun rellenarListaHamburguesas(){
 
         ListaHamburgesas.hamburguesas = arrayListOf(
-            Hamburguesa("300 (gr) Beef Burger",10.99, R.drawable.beef_burguer,R.drawable.beef_burguer_thumb),
-            Hamburguesa("Double Beef Burger",8.99,R.drawable.doble_beef_burguer,R.drawable.doble_beef_burguer_thumb),
-            Hamburguesa("Bacon Burger",7.99,R.drawable.bacon_burguer,R.drawable.bacon_burguer_thumb),
-            Hamburguesa("Special Burger",9.99,R.drawable.special_burguer,R.drawable.special_burguer_thumb),
-            Hamburguesa("Chicken Burger",7.99,R.drawable.chicken_burguer,R.drawable.chicken_burguer_thumb),
-            Hamburguesa("Vegan Burger",9.99,R.drawable.vegan_burguer,R.drawable.vegan_burguer_thumb),
-            Hamburguesa("Quinoa Burger",8.99,R.drawable.quinoa_burguer,R.drawable.quinoa_burguer_thumb)
+            Hamburguesa("300 (gr) Beef Burger",10.99, R.drawable.beef_burguer),
+            Hamburguesa("Double Beef Burger",8.99,R.drawable.doble_beef_burguer),
+            Hamburguesa("Bacon Burger",7.99,R.drawable.bacon_burguer),
+            Hamburguesa("Special Burger",9.99,R.drawable.special_burguer),
+            Hamburguesa("Chicken Burger",7.99,R.drawable.chicken_burguer),
+            Hamburguesa("Vegan Burger",9.99,R.drawable.vegan_burguer),
+            Hamburguesa("Quinoa Burger",8.99,R.drawable.quinoa_burguer)
         )
     }
 
@@ -106,7 +102,10 @@ class MainActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
     }
 
-    fun goToDetailsActivity(name: String, price: Double, image: Int){
-
+    override fun hamburguesaItemClicked(id: Int) {
+        val intentToDetails = Intent(this, ingredientesActivity::class.java)
+        intentToDetails.putExtra("position",id)
+        startActivity(intentToDetails)
     }
+
 }

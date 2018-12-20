@@ -6,12 +6,10 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_ingredientes.*
 import android.support.v4.app.ActivityOptionsCompat
 import android.content.Intent
-import android.os.AsyncTask
-import android.util.Log
 import com.pauenrech.apppizzeria.model.Hamburguesa
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.pedir_layout.*
-import kotlinx.android.synthetic.main.show_image.*
+
 
 
 class ingredientesActivity : AppCompatActivity() {

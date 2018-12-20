@@ -13,6 +13,12 @@
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:windowContentTransitions">true</item>
     </style>
+    <style name="AppTheme.NoActionBar.NotificationColor">
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+    </style>
+    <style name="ToolbarFont" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
     <style name="AppTheme.NoActionBar.BigImage">
         <item name="android:windowSharedElementEnterTransition">@transition/change_image_from_activity_to_activity</item>
     </style>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.AppCompatCheckBox
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prueba"
+        android:buttonTint="@color/colorAccent"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:layout_weight="0"
+        android:gravity="left|center"
+        android:layout_gravity="left"
+        android:allowUndo="true"
+        android:id="@+id/radioBtnCard"
+        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/colorPrimaryDark">
+</android.support.v7.widget.AppCompatCheckBox>
