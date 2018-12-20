@@ -35,8 +35,10 @@ class ingredientesActivity : AppCompatActivity() {
         toppingAdapter = CustomCheckboxGroupAdapter(this,MainActivity.ListaIngredientes.ingredientes!!)
         toppingLayoutManager = NoScrollGridLayoutManager(this,2)
 
+        snack_recyclerView.isNestedScrollingEnabled = false
         snack_recyclerView.adapter = snackAdapter
         snack_recyclerView.layoutManager = snackLayoutManager
+        topping_recyclerView.isNestedScrollingEnabled = false
         topping_recyclerView.adapter = toppingAdapter
         topping_recyclerView.layoutManager = toppingLayoutManager
 

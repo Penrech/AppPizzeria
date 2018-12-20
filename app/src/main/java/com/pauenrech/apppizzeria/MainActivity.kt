@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaList
         ListaAcompañamientos.acompañamientos = arrayListOf(
             Extra("acomp1","Ensalada",2.0),
             Extra("acomp2","Patata asada", 4.0),
-            Extra("acomp3","Patatas fritas con coles de bruselas y tal y cual",3.0)
+            Extra("acomp3","Patatas fritas",3.0)
         )
     }
 
