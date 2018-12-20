@@ -1,22 +1,22 @@
 package com.pauenrech.apppizzeria.model
 
+import android.os.Parcel
+import android.os.Parcelable
 
 
-class Hamburguesa {
+class Hamburguesa constructor(val nombreHamburguesa: String, val precioHamburguesa : Double, val imagenHamburguesa : Int):
+    Parcelable {
 
-    var nombreHamburguesa: String? = null
-    var precioHamburguesa: Double? = null
-    var imagenHamburguesa: Int? = null
+    constructor(source: Parcel): this(
+        source.readString(),
+        source.readDouble(),
+        source.readInt()
 
-    constructor(name: String, price: Double, img: Int){
-        nombreHamburguesa = name
-        precioHamburguesa = price
-        imagenHamburguesa = img
-    }
+    )
 
     fun getPriceText(): String{
-        if (precioHamburguesa == precioHamburguesa!!.toInt().toDouble()) {
-            return "${precioHamburguesa!!.toInt()} €"
+        if (precioHamburguesa == precioHamburguesa.toInt().toDouble()) {
+            return "${precioHamburguesa.toInt()} €"
         }
         else{
             return "$precioHamburguesa €"
@@ -24,4 +24,23 @@ class Hamburguesa {
 
     }
 
+    override fun writeToParcel(dest: Parcel, flags: Int) {
+        dest.writeString(nombreHamburguesa)
+        dest.writeDouble(precioHamburguesa)
+        dest.writeInt(imagenHamburguesa)
+    }
+
+    override fun describeContents(): Int {
+       return 0
+    }
+
+    companion object CREATOR: Parcelable.Creator<Hamburguesa>{
+        override fun createFromParcel(source: Parcel): Hamburguesa {
+            return Hamburguesa(source)
+        }
+
+        override fun newArray(size: Int): Array<Hamburguesa?> {
+            return arrayOfNulls(size)
+        }
+    }
 }
