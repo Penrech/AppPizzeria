@@ -4,10 +4,10 @@ class Extra(val id: String, val name: String, val price: Double) {
 
     fun getLabelText(): String{
         if (price == price.toInt().toDouble()) {
-            return "${price.toInt()} €"
+            return "$name (${price.toInt()} €)"
         }
         else{
-            return "$price €"
+            return "$name ($price €)"
         }
     }
 

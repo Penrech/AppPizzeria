@@ -8,6 +8,7 @@ import com.pauenrech.apppizzeria.data.HamburguesaListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.menu_layout.*
 import android.content.Intent
+import com.pauenrech.apppizzeria.model.Extra
 import com.pauenrech.apppizzeria.viewHolders.HamburguesaViewHolder
 import com.pauenrech.apppizzeria.model.Hamburguesa
 
@@ -42,11 +43,11 @@ class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaList
     }
 
     object ListaAcompañamientos{
-        public var acompañamientos: ArrayList<Triple<String,String,Double>>? = null
+        public var acompañamientos: ArrayList<Extra>? = null
     }
 
     object ListaIngredientes{
-        public var ingredientes: ArrayList<Triple<String,String,Double>>? = null
+        public var ingredientes: ArrayList<Extra>? = null
     }
 
     fun rellenarListaHamburguesas(){
@@ -65,21 +66,21 @@ class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaList
     fun rellenarListaAcompañamientos(){
 
         ListaAcompañamientos.acompañamientos = arrayListOf(
-            Triple("acomp1","Ensalada",2.0),
-            Triple("acomp2","Patata asada", 4.0),
-            Triple("acomp3","Patatas frias",3.0)
+            Extra("acomp1","Ensalada",2.0),
+            Extra("acomp2","Patata asada", 4.0),
+            Extra("acomp3","Patatas fritas con coles de bruselas y tal y cual",3.0)
         )
     }
 
     fun rellenarListaIngredientes(){
 
         ListaIngredientes.ingredientes = arrayListOf(
-            Triple("extra1","Salsa barbacoa",0.5),
-            Triple("extra2","Cebolla cruda",0.5),
-            Triple("extra3","Cebolla frita",0.5),
-            Triple("extra4","Huevo Frito",1.0),
-            Triple("extra5","Pepinillos",0.5),
-            Triple("extra6","Aguacate",1.0)
+            Extra("extra1","Salsa barbacoa",0.5),
+            Extra("extra2","Cebolla cruda",0.5),
+            Extra("extra3","Cebolla frita y con caramelo",0.5),
+            Extra("extra4","Huevo Frito",1.0),
+            Extra("extra5","Pepinillos",0.5),
+            Extra("extra6","Aguacate",1.0)
         )
 
     }

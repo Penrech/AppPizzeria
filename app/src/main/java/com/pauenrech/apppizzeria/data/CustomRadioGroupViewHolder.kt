@@ -22,7 +22,7 @@ class CustomRadioGroupViewHolder(itemView: View) : RecyclerView.ViewHolder(itemV
         price = null
         name = null
 
-        itemView.setOnClickListener {
+        radioButton.setOnClickListener {
             manageCheck(radioButton)
         }
     }

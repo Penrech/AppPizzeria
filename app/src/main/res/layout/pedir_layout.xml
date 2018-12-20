@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
     <android.support.v4.widget.NestedScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="false"
@@ -17,26 +12,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="vertical" android:focusableInTouchMode="true">
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:id="@+id/linearLayout">
             <TextView
                     android:text="Nombre hamburguesa"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/pedirNombreBurger"
                     android:padding="10dp"
                     android:fontFamily="@font/roboto_light"
                     android:textSize="18sp"
                     android:textColor="@color/colorPrimaryDark"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="24dp" android:layout_marginEnd="24dp"
+                    android:layout_marginTop="8dp"/>
             <TextView
                     android:text="Acompañamiento"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView4"
-                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_light"
                     android:textSize="16sp"
                     android:textColor="@color/colorPrimary"
@@ -46,206 +45,133 @@
                     android:paddingTop="10dp"
                     android:gravity="center"
                     android:background="@color/colorPrimaryDark"
-                    android:layout_marginBottom="10dp"/>
-            <RadioGroup
+                    app:layout_constraintTop_toBottomOf="@+id/pedirNombreBurger"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="16dp"/>
+
+            <android.support.v7.widget.RecyclerView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp"
-                    android:layout_weight="0"
-                    android:gravity="center_vertical|center_horizontal|center"
-                    android:layout_gravity="center_vertical|center_horizontal|center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp">
-                <RadioButton
-                        android:text="Ensalada (2 €)"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/acomp1"
-                        android:layout_weight="0"
-                        android:padding="5dp"
-                        android:layout_margin="5dp"
-                        android:fontFamily="@font/roboto"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="0dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="0dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="left|center"
-                        android:textAlignment="viewStart"
-                        android:layout_gravity="left"
-                        android:buttonTint="@color/colorAccent"
-                        android:textColor="@color/colorPrimaryDark"/>
-                <RadioButton
-                        android:text="Patata asada (4 €)"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/acomp2"
-                        android:layout_weight="0"
-                        android:padding="5dp" android:layout_margin="5dp" android:fontFamily="@font/roboto"
-                        android:gravity="left|center" android:paddingBottom="5dp"
-                        android:paddingLeft="0dp" android:paddingRight="5dp" android:paddingTop="5dp"
-                        android:layout_marginBottom="5dp" android:layout_marginLeft="0dp"
-                        android:layout_marginRight="5dp" android:layout_marginTop="5dp"
-                        android:textAlignment="viewStart" android:layout_gravity="left"
-                        android:buttonTint="@color/colorAccent" android:textColor="@color/colorPrimaryDark"/>
-                <RadioButton
-                        android:text="Patatas fritas (3 €)"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/acomp3" android:layout_weight="0"
-                        android:padding="5dp" android:layout_margin="5dp" android:fontFamily="@font/roboto"
-                        android:gravity="left|center" android:paddingBottom="5dp"
-                        android:paddingLeft="0dp" android:paddingRight="5dp" android:paddingTop="5dp"
-                        android:layout_marginBottom="5dp" android:layout_marginLeft="0dp"
-                        android:layout_marginRight="5dp" android:layout_marginTop="5dp"
-                        android:textAlignment="viewStart" android:layout_gravity="left"
-                        android:buttonTint="@color/colorAccent" android:textColor="@color/colorPrimaryDark"
-                />
-            </RadioGroup>
+                    android:id="@+id/snack_recyclerView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp" android:layout_marginTop="24dp"/>
+
             <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textView5" android:layout_marginTop="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:id="@+id/textView5"
                     android:fontFamily="@font/roboto_light" android:textSize="16sp"
                     android:textColor="@color/colorPrimary" android:text="Toppings" android:paddingBottom="10dp"
                     android:paddingRight="10dp" android:paddingLeft="10dp" android:paddingTop="10dp"
-                    android:gravity="center" android:layout_marginBottom="10dp"
-                    android:background="@color/colorPrimaryDark"/>
-            <LinearLayout
-                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintTop_toBottomOf="@+id/snack_recyclerView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="24dp"/>
+
+
+            <android.support.v7.widget.RecyclerView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:layout_gravity="center" android:paddingBottom="10dp"
-                    android:paddingTop="10dp" android:layout_marginBottom="5dp" android:layout_marginTop="5dp">
-                <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_weight="0" android:padding="0dp"
-                        android:paddingLeft="10dp" android:paddingRight="10dp">
-                    <CheckBox
-                            android:text="Salsa barbacoa (0.5 €)"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/extra1" android:padding="5dp"
-                            android:layout_margin="5dp" android:buttonTint="@color/colorAccent"
-                            android:textColor="@color/colorPrimaryDark" android:fontFamily="@font/roboto"/>
-                    <CheckBox
-                            android:text="Cebolla cruda (0.5 €)"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/extra2" android:padding="5dp"
-                            android:layout_margin="5dp" android:buttonTint="@color/colorAccent"
-                            android:textColor="@color/colorPrimaryDark" android:fontFamily="@font/roboto"/>
-                    <CheckBox
-                            android:text="Cebolla frita (0.5  €)"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/extra3" android:padding="5dp"
-                            android:layout_margin="5dp" android:buttonTint="@color/colorAccent"
-                            android:textColor="@color/colorPrimaryDark" android:fontFamily="@font/roboto"/>
-                </LinearLayout>
-                <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_weight="0"
-                        android:paddingLeft="10dp" android:paddingRight="10dp">
-                    <CheckBox
-                            android:text="Huevo frito (1 €)"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/extra4" android:padding="5dp"
-                            android:layout_margin="5dp" android:buttonTint="@color/colorAccent"
-                            android:textColor="@color/colorPrimaryDark" android:fontFamily="@font/roboto"/>
-                    <CheckBox
-                            android:text="Pepinillos (0.5 €)"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/extra5" android:padding="5dp"
-                            android:layout_margin="5dp" android:buttonTint="@color/colorAccent"
-                            android:textColor="@color/colorPrimaryDark" android:fontFamily="@font/roboto"/>
-                    <CheckBox
-                            android:text="Aguacate (1 €)"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/extra6" android:padding="5dp"
-                            android:layout_margin="5dp" android:buttonTint="@color/colorAccent"
-                            android:textColor="@color/colorPrimaryDark" android:fontFamily="@font/roboto"
-                    />
-                </LinearLayout>
-            </LinearLayout>
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginTop="24dp"
+                    android:id="@+id/topping_recyclerView"/>
+
+
             <TextView
                     android:text="Dirección"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textView" android:layout_marginTop="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:id="@+id/textView"
                     android:fontFamily="@font/roboto_light" android:textSize="16sp"
                     android:textColor="@color/colorPrimary" android:paddingBottom="10dp"
                     android:paddingLeft="10dp" android:paddingRight="10dp" android:paddingTop="10dp"
                     android:gravity="center" android:background="@color/colorPrimaryDark"
-                    android:layout_marginBottom="10dp"/>
-            <LinearLayout
-                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/topping_recyclerView" android:layout_marginTop="24dp"/>
+
+            <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:padding="10dp"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center_vertical|center_horizontal|center" android:layout_marginTop="5dp">
-                <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp" app:srcCompat="@drawable/location_light_36"
-                        android:id="@+id/imageView3" android:layout_weight="0" android:scaleType="centerInside"
-                        android:tint="@color/colorAccent" android:alpha="1"/>
-                <EditText
-                        android:focusedByDefault="false"
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/directionEditText" android:layout_weight="0" android:hint="Dirección"
-                        android:fontFamily="@font/roboto" android:textSize="16sp" android:layout_marginLeft="5dp"
-                        android:textColor="@color/colorPrimaryDark"/>
-            </LinearLayout>
-            <LinearLayout
-                    android:orientation="horizontal"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/location_light_36"
+                    android:id="@+id/imageView3" android:scaleType="centerInside"
+                    android:tint="@color/colorAccent" android:alpha="1"
+                    app:layout_constraintEnd_toStartOf="@+id/directionEditText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="33dp" android:layout_marginEnd="5dp"
+                    app:layout_constraintTop_toTopOf="@+id/directionEditText"
+                    app:layout_constraintBottom_toBottomOf="@+id/directionEditText"
+            />
+            <EditText
+                    android:focusedByDefault="false"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/directionEditText" android:hint="Dirección"
+                    android:fontFamily="@font/roboto" android:textSize="16sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    app:layout_constraintStart_toEndOf="@+id/imageView3" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="33dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+
+            <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" android:padding="10dp"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center_vertical|center_horizontal|center" android:layout_marginBottom="10dp">
-                <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp" app:srcCompat="@drawable/phone_light_36"
-                        android:layout_weight="0" android:scaleType="centerInside"
-                        android:tint="@color/colorAccent" android:alpha="1"/>
-                <EditText
-                        android:focusedByDefault="false"
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/phoneEditText" android:layout_weight="0" android:hint="Teléfono"
-                        android:fontFamily="@font/roboto" android:textSize="16sp" android:layout_marginLeft="5dp"
-                        android:textColor="@color/colorPrimaryDark"/>
-            </LinearLayout>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:layout_marginTop="10dp" android:gravity="center"
-                    android:layout_gravity="center">
-                <Button
-                        android:text="Pedir"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="0"
-                        android:fontFamily="@font/roboto_bold" android:padding="10dp" android:layout_margin="10dp"
-                        android:textSize="16sp" android:textAllCaps="true" android:textColor="@color/colorPrimary"
-                        style="@style/Widget.AppCompat.Button"
-                        android:backgroundTint="@color/colorAccent"/>
-            </LinearLayout>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical|center_horizontal|center" android:gravity="center"
-                    android:layout_marginTop="0dp" android:layout_marginBottom="20dp"
-                    android:paddingBottom="10dp" android:paddingLeft="10dp" android:paddingRight="10dp">
-                <TextView
-                        android:text="Total a pagar : 20 €"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_weight="0"
-                        android:gravity="center" android:layout_gravity="center" android:fontFamily="@font/roboto"
-                        android:textColor="@color/colorPrimaryDark"/>
-            </LinearLayout>
-        </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>-->
-</android.support.constraint.ConstraintLayout>
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/phone_light_36"
+                    android:scaleType="centerInside"
+                    android:tint="@color/colorAccent" android:alpha="1"
+                    android:id="@+id/imageView2"
+                    app:layout_constraintEnd_toStartOf="@+id/phoneEditText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="33dp" android:layout_marginEnd="5dp"
+                    app:layout_constraintTop_toTopOf="@+id/phoneEditText"
+                    app:layout_constraintBottom_toBottomOf="@+id/phoneEditText"/>
+            <EditText
+                    android:focusedByDefault="false"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/phoneEditText" android:hint="Teléfono"
+                    android:fontFamily="@font/roboto" android:textSize="16sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/directionEditText"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="33dp"
+            />
+
+
+            <Button
+                    android:text="Pedir"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" android:id="@+id/button"
+                    android:fontFamily="@font/roboto_bold" android:padding="10dp"
+                    android:textSize="16sp" android:textAllCaps="true" android:textColor="@color/colorPrimary"
+                    style="@style/Widget.AppCompat.Button"
+                    android:backgroundTint="@color/colorAccent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="100dp"
+                    android:layout_marginEnd="100dp"
+                    app:layout_constraintTop_toBottomOf="@+id/phoneEditText" android:layout_marginTop="16dp"/>
+
+
+            <TextView
+                    android:text="Total a pagar : 20 €"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView2"
+                    android:gravity="center" android:fontFamily="@font/roboto"
+                    android:textColor="@color/colorPrimaryDark"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="24dp" android:layout_marginBottom="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/button" android:layout_marginTop="10dp"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>

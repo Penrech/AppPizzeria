@@ -6,6 +6,7 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_ingredientes.*
 import android.support.v4.app.ActivityOptionsCompat
 import android.content.Intent
+import com.pauenrech.apppizzeria.data.*
 import com.pauenrech.apppizzeria.model.Hamburguesa
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.pedir_layout.*
@@ -13,6 +14,11 @@ import kotlinx.android.synthetic.main.pedir_layout.*
 
 
 class ingredientesActivity : AppCompatActivity() {
+
+    var snackAdapter : CustomRadioGroupAdapter? = null
+    var snackLayoutManager: NoScrollLinearLayoutManager? = null
+    var toppingAdapter : CustomCheckboxGroupAdapter? = null
+    var toppingLayoutManager: NoScrollGridLayoutManager? = null
 
     var hamburguesaSeleccionada: Hamburguesa? = null
     var imagen: Int? = null
@@ -23,6 +29,16 @@ class ingredientesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_ingredientes)
 
         setSupportActionBar(toolbar_ingredients)
+
+        snackAdapter = CustomRadioGroupAdapter(this,MainActivity.ListaAcompañamientos.acompañamientos!!)
+        snackLayoutManager = NoScrollLinearLayoutManager(this)
+        toppingAdapter = CustomCheckboxGroupAdapter(this,MainActivity.ListaIngredientes.ingredientes!!)
+        toppingLayoutManager = NoScrollGridLayoutManager(this,2)
+
+        snack_recyclerView.adapter = snackAdapter
+        snack_recyclerView.layoutManager = snackLayoutManager
+        topping_recyclerView.adapter = toppingAdapter
+        topping_recyclerView.layoutManager = toppingLayoutManager
 
         hamburguesaSeleccionada = MainActivity.ListaHamburgesas.hamburguesas!![intent.getIntExtra("position",0)]
 
