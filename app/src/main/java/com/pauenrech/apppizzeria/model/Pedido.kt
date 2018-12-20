@@ -1,40 +1,37 @@
 package com.pauenrech.apppizzeria.model
 
-import java.io.Serializable
-import kotlin.properties.Delegates
-
 class Pedido(var hamburguesaSeleccionada: Hamburguesa) {
 
-    var listaAcompañamientos: MutableMap<String,Double> = mutableMapOf()
-    var listaIngredientes: MutableMap<String,Double> = mutableMapOf()
+    var listaAcompañamientos: MutableMap<String,Extra> = mutableMapOf()
+    var listaIngredientes: MutableMap<String,Extra> = mutableMapOf()
     var precioTotal = 0.0
 
     init {
-        precioTotal = hamburguesaSeleccionada.precioHamburguesa!!
+        precioTotal = hamburguesaSeleccionada.precioHamburguesa
     }
 
-    fun addAcompañamiento(acompañamiento: Pair<String,Double>){
-        var result = listaAcompañamientos.putIfAbsent(acompañamiento.first,acompañamiento.second)
+    fun addAcompañamiento(acompañamiento: Extra){
+        val result = listaAcompañamientos.putIfAbsent(acompañamiento.id,acompañamiento)
         if (result == null){
-            precioTotal += acompañamiento.second
+            precioTotal += acompañamiento.price
         }
     }
-    fun removeAcompañamiento(acompañamiento: Pair<String, Double>){
-        var result = listaAcompañamientos.remove(acompañamiento.first)
+    fun removeAcompañamiento(acompañamiento: Extra){
+        val result = listaAcompañamientos.remove(acompañamiento.id)
         if (result != null){
-            precioTotal -= acompañamiento.second
+            precioTotal -= acompañamiento.price
         }
     }
-    fun addIngrediente(ingrediente: Pair<String,Double>){
-        var result = listaIngredientes.putIfAbsent(ingrediente.first,ingrediente.second)
+    fun addIngrediente(ingrediente: Extra){
+        val result = listaIngredientes.putIfAbsent(ingrediente.id,ingrediente)
         if (result == null){
-            precioTotal += ingrediente.second
+            precioTotal += ingrediente.price
         }
     }
-    fun removeIngrediente(ingrediente: Pair<String, Double>){
-        var result = listaIngredientes.remove(ingrediente.first)
+    fun removeIngrediente(ingrediente: Extra){
+        val result = listaIngredientes.remove(ingrediente.id)
         if (result != null){
-            precioTotal -= ingrediente.second
+            precioTotal -= ingrediente.price
         }
     }
 
@@ -49,9 +46,9 @@ class Pedido(var hamburguesaSeleccionada: Hamburguesa) {
     fun resumenAcompañamiento(): String {
         var resultString = ""
         if (conAcompañamiento()){
-            var lista = listaAcompañamientos.toList()
+            val lista = listaAcompañamientos.toList()
             resultString = lista.joinToString {
-                it.first
+                it.second.name
             }
         }
         else{
@@ -63,9 +60,9 @@ class Pedido(var hamburguesaSeleccionada: Hamburguesa) {
     fun resumenIngredientes(): String {
         var resultString = ""
         if (conIngredientes()){
-            var lista = listaIngredientes.toList()
+            val lista = listaIngredientes.toList()
             resultString = lista.joinToString {
-                it.first
+                it.second.name
             }
         }
         else{

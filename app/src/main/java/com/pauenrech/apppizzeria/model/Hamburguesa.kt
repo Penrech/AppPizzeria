@@ -21,7 +21,6 @@ class Hamburguesa constructor(val nombreHamburguesa: String, val precioHamburgue
         else{
             return "$precioHamburguesa €"
         }
-
     }
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
