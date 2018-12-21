@@ -4,18 +4,18 @@ import android.os.Parcel
 import android.os.Parcelable
 
 
-class Hamburguesa constructor(val nombreHamburguesa: String, val precioHamburguesa : Double, val imagenHamburguesa : Int):
+class Hamburguesa constructor(val nombreHamburguesa: String, val precioHamburguesa : Float, val imagenHamburguesa : Int):
     Parcelable {
 
     constructor(source: Parcel): this(
         source.readString(),
-        source.readDouble(),
+        source.readFloat(),
         source.readInt()
 
     )
 
     fun getPriceText(): String{
-        if (precioHamburguesa == precioHamburguesa.toInt().toDouble()) {
+        if (precioHamburguesa == precioHamburguesa.toInt().toFloat()) {
             return "${precioHamburguesa.toInt()} €"
         }
         else{
@@ -25,7 +25,7 @@ class Hamburguesa constructor(val nombreHamburguesa: String, val precioHamburgue
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
         dest.writeString(nombreHamburguesa)
-        dest.writeDouble(precioHamburguesa)
+        dest.writeFloat(precioHamburguesa)
         dest.writeInt(imagenHamburguesa)
     }
 
@@ -34,8 +34,8 @@ class Hamburguesa constructor(val nombreHamburguesa: String, val precioHamburgue
     }
 
     companion object CREATOR: Parcelable.Creator<Hamburguesa>{
-        override fun createFromParcel(source: Parcel): Hamburguesa {
-            return Hamburguesa(source)
+        override fun createFromParcel(source: Parcel?): Hamburguesa {
+            return Hamburguesa(source!!)
         }
 
         override fun newArray(size: Int): Array<Hamburguesa?> {

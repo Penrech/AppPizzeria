@@ -4,8 +4,6 @@ package com.pauenrech.apppizzeria
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.transition.TransitionInflater
-import android.util.Log
-import android.view.animation.Animation
 import kotlinx.android.synthetic.main.show_image.*
 import com.squareup.picasso.Picasso
 
@@ -18,30 +16,21 @@ class showImageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.show_image)
 
+        //Al final utilicé una libreria para el pinch-to-zoom ya que estaba perdiendo mucho tiempo intenado implementarlo
+        //Yo mismo. Aun asi, espero poder implementar algo asi más adelante
         var inTransition = TransitionInflater.from(this)
             .inflateTransition(R.transition.change_image_from_activity_to_activity)
 
         window.sharedElementEnterTransition = inTransition
 
         val idImage = intent.getIntExtra("imageToResize",0)
-        //imageDetail.setImageResource(idImage)
         Picasso.get().load(idImage).into(imageDetail)
-
-        imageDetail.animate().setUpdateListener {
-            Log.i("TAG","Imagen animada")
-        }
 
     }
 
     override fun onBackPressed() {
         supportFinishAfterTransition()
-        /*if(imagenAmpliada){
 
-
-        }
-        else{
-            supportFinishAfterTransition()
-        }*/
     }
 
 }

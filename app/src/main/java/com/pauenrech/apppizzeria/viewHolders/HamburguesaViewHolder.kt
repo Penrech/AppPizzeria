@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.card_layout.view.*
 class HamburguesaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     var nombre: TextView
     var precioString: TextView
-    var precio: Double?
+    var precio: Float?
     var imagenId: Int?
     var imagen: ImageView
 
@@ -23,7 +23,7 @@ class HamburguesaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         imagen = itemView.imageView
     }
 
-    fun setPrice(price: Double, priceString: String){
+    fun setPrice(price: Float, priceString: String){
         precio = price
         precioString.text = priceString
     }

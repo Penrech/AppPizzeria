@@ -50,37 +50,39 @@ class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaList
         public var ingredientes: ArrayList<Extra>? = null
     }
 
+
+    //He querido simular el hecho de que se descargaran todos los datos desde un servidor y luego se printaran en las activities correspondientes
     fun rellenarListaHamburguesas(){
 
         ListaHamburgesas.hamburguesas = arrayListOf(
-            Hamburguesa("300 (gr) Beef Burger",10.99, R.drawable.beef_burguer),
-            Hamburguesa("Double Beef Burger",8.99,R.drawable.doble_beef_burguer),
-            Hamburguesa("Bacon Burger",7.99,R.drawable.bacon_burguer),
-            Hamburguesa("Special Burger",9.99,R.drawable.special_burguer),
-            Hamburguesa("Chicken Burger",7.99,R.drawable.chicken_burguer),
-            Hamburguesa("Vegan Burger",9.99,R.drawable.vegan_burguer),
-            Hamburguesa("Quinoa Burger",8.99,R.drawable.quinoa_burguer)
+            Hamburguesa("300 (gr) Beef Burger",10.99f, R.drawable.beef_burguer),
+            Hamburguesa("Double Beef Burger",8.99f,R.drawable.doble_beef_burguer),
+            Hamburguesa("Bacon Burger",7.99f,R.drawable.bacon_burguer),
+            Hamburguesa("Special Burger",9.99f,R.drawable.special_burguer),
+            Hamburguesa("Chicken Burger",7.99f,R.drawable.chicken_burguer),
+            Hamburguesa("Vegan Burger",9.99f,R.drawable.vegan_burguer),
+            Hamburguesa("Quinoa Burger",8.99f,R.drawable.quinoa_burguer)
         )
     }
 
     fun rellenarListaAcompañamientos(){
 
         ListaAcompañamientos.acompañamientos = arrayListOf(
-            Extra("acomp1","Ensalada",2.0),
-            Extra("acomp2","Patata asada", 4.0),
-            Extra("acomp3","Patatas fritas",3.0)
+            Extra("acomp1","Ensalada",2f),
+            Extra("acomp2","Patata asada", 4f),
+            Extra("acomp3","Patatas fritas",3f)
         )
     }
 
     fun rellenarListaIngredientes(){
 
         ListaIngredientes.ingredientes = arrayListOf(
-            Extra("extra1","Salsa barbacoa",0.5),
-            Extra("extra2","Cebolla cruda",0.5),
-            Extra("extra3","Cebolla frita y con caramelo",0.5),
-            Extra("extra4","Huevo Frito",1.0),
-            Extra("extra5","Pepinillos",0.5),
-            Extra("extra6","Aguacate",1.0)
+            Extra("extra1","Salsa barbacoa",0.5f),
+            Extra("extra2","Cebolla cruda",0.5f),
+            Extra("extra3","Cebolla frita",0.5f),
+            Extra("extra4","Huevo Frito",1.0f),
+            Extra("extra5","Pepinillos",0.5f),
+            Extra("extra6","Aguacate",1f)
         )
 
     }
@@ -92,12 +94,8 @@ class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaList
 
     override fun finish() {
         super.finish()
-        onLeaveThisActivity()
     }
 
-    protected fun onLeaveThisActivity() {
-        overridePendingTransition(R.anim.slide_back_in, R.anim.slide_back_out)
-    }
 
     protected fun onStartNewActivity() {
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out)

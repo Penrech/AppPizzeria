@@ -1,4 +1,4 @@
-package com.pauenrech.apppizzeria.data
+package com.pauenrech.apppizzeria.viewHolders
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -10,7 +10,7 @@ class CustomRadioGroupViewHolder(itemView: View) : RecyclerView.ViewHolder(itemV
 
     var radioButton = itemView.radioBtnCard
     var idButton: String?
-    var price: Double?
+    var price: Float?
     var name: String?
 
     companion object {
@@ -22,9 +22,6 @@ class CustomRadioGroupViewHolder(itemView: View) : RecyclerView.ViewHolder(itemV
         price = null
         name = null
 
-        radioButton.setOnClickListener {
-            manageCheck(radioButton)
-        }
     }
 
     fun bindItem(acompañamiento: Extra){
@@ -35,21 +32,5 @@ class CustomRadioGroupViewHolder(itemView: View) : RecyclerView.ViewHolder(itemV
         radioButtonsArrayList.add(radioButton)
     }
 
-    fun manageCheck(radioButton: CheckBox){
-        for (rb in radioButtonsArrayList){
-            if(rb == radioButton){
-                if (rb.isChecked){
-                    //todo guardo en pedido
-                }
-                else{
-                    //todo borro en pedido
-                }
-            }
-            else{
-                rb.isChecked = false
-                //todo borro en pedido
-            }
-        }
-    }
 
 }

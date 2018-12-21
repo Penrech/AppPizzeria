@@ -6,18 +6,25 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:buttonStyle">@style/NoShadowButton</item>
+    </style>
+    <style name="NoShadowButton" parent="android:style/Widget.Button">
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="AppTheme.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
         <item name="android:windowContentTransitions">true</item>
     </style>
     <style name="AppTheme.NoActionBar.NotificationColor">
         <item name="colorPrimaryDark">@color/colorPrimary</item>
     </style>
     <style name="ToolbarFont" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
     </style>
     <style name="AppTheme.NoActionBar.BigImage">
         <item name="android:windowSharedElementEnterTransition">@transition/change_image_from_activity_to_activity</item>
