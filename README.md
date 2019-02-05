@@ -11,7 +11,7 @@
 <h1>Description</h1>
 <p>Academic demo app, this app is not debugged, its just a sample demo</p>
 
-<img src="https://drive.google.com/open?id=197zs3L6wEBxEeyAfa2Sekz-lK4yOxpZC"/>
+![](device-2019-02-05-123200.png)
 
 <h1>Apk demo</h1>
 <h3>Upcoming...</h3>
