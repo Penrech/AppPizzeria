@@ -41,7 +41,7 @@ class Resumen : AppCompatActivity() {
         val toppings = intent.getStringExtra(ingredientesActivity.TOPPINGS_RESUM)
         val direccion = intent.getStringExtra(ingredientesActivity.DIRECCION_RESUM)
 
-        val telefono = intent.getIntExtra(ingredientesActivity.TELEFONO_RESUM,666666666)
+        val telefono = intent.getLongExtra(ingredientesActivity.TELEFONO_RESUM,666666666)
         val precio = intent.getFloatExtra(ingredientesActivity.PRECIO_RESUM,0f)
 
         Picasso.get().load(imagen_hamburguesa).into(imagenTopResumen)

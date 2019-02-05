@@ -105,7 +105,7 @@ class ingredientesActivity : AppCompatActivity()
             pedido!!.direccion = directionEditText.text.toString()
         }
         if(!phoneEditText.text.isNullOrEmpty()){
-            pedido!!.telefono =  phoneEditText.text.toString().toInt()
+            pedido!!.telefono =  phoneEditText.text.toString().toLong()
         }
         val intent = Intent(this,Resumen::class.java)
         intent.putExtra(HAMBURGUESA_RESUM,pedido!!.hamburguesaSeleccionada.nombreHamburguesa)

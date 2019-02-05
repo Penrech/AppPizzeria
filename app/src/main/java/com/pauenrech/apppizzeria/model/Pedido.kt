@@ -15,7 +15,7 @@ class Pedido constructor(var hamburguesaSeleccionada: Hamburguesa ,var changePri
     //No he implementado validación porque me ha ido justo de tiempo, así que he puesto valores por defecto por si no
     //se escribe nada
     var direccion = "Desconocida"
-    var telefono: Int = 666666666
+    var telefono: Long = 666666666
     var listaIngredientes: MutableMap<String,Extra> = mutableMapOf()
     var acompañamiento_item: Extra?
     var precioWatcher
