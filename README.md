@@ -11,9 +11,9 @@
 <h1>Description</h1>
 <p>Academic demo app, this app is not debugged, its just a sample demo</p>
 
-     |  
+![](device-2019-02-05-123200.png) |  ![](device-2019-02-05-123255.png)
 :-------------------------:|:-------------------------:
-![](device-2019-02-05-123255.png)  |  ![](device-2019-02-05-123346.png)
+![](device-2019-02-05-123346.png)  |  ![](device-2019-02-05-123438.png)
 
 <p align="middle">
 <img padding=10 src="https://github.com/Penrech/AppPizzeria/blob/master/device-2019-02-05-123200.png" width="250">
