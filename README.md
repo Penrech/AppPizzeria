@@ -12,10 +12,10 @@
 <p>Academic demo app, this app is not debugged, its just a sample demo</p>
 
 <p float="left">
-<img src="https://github.com/Penrech/AppPizzeria/blob/master/device-2019-02-05-123200.png" width="300">
-<img src="https://github.com/Penrech/AppPizzeria/blob/master/device-2019-02-05-123255.png" width="300">
-<img src="https://github.com/Penrech/AppPizzeria/blob/master/device-2019-02-05-123346.png" width="300">
-<img src="https://github.com/Penrech/AppPizzeria/blob/master/device-2019-02-05-123438.png" width="300">
+<img src="https://github.com/Penrech/AppPizzeria/blob/master/device-2019-02-05-123200.png" width="250">
+<img src="https://github.com/Penrech/AppPizzeria/blob/master/device-2019-02-05-123255.png" width="250">
+<img src="https://github.com/Penrech/AppPizzeria/blob/master/device-2019-02-05-123346.png" width="250">
+<img src="https://github.com/Penrech/AppPizzeria/blob/master/device-2019-02-05-123438.png" width="250">
 </p>
 
 <h1>Apk demo</h1>
