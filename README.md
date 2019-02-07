@@ -25,9 +25,9 @@
 <h1>Demo *</h1>
 <p style>*A higher quality video opens on YouTube when clicked</p>
 
-<p float="left">
+<p align="center">
   <a href='https://www.youtube.com/watch?v=-EaXq6ROKbI'><img width = '49%' src='AppPizzeria1_low.gif'/></a>
-  <a width='49%' href='#'>Prueba</a>
+  <a href='#imgE1'><img id='imgE1' width = '49%' src='AppPizzeria1.png'/></a>
 </p>
 <p align="center">
   <a href='https://www.youtube.com/watch?v=pCmnH_UwlHw'><img width = '49%' src='AppPizzeria2_low.gif'/></a>
