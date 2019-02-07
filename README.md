@@ -10,7 +10,7 @@
 
 <h1>Description</h1>
 <p>Design and code of a restaurant menu app. It's just the frontend part.</p>
-<p>Academic demo app, this app is not completely debugged, it's just a demo. It could contain not extracted text strings and not indented code</p>
+<p>Academic demo app, this app is not completely debugged, it's just a demo. It could contain not extracted text strings and not properly indented code</p>
 
 <h1>Screenshots</h1>
 <p>
