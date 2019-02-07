@@ -36,6 +36,6 @@
 </p>
 <br>
 <p align="center">
-   <a href='#imgE3'><img id='imgE3' width = '49%' src='AppPizzeria3.png'/></a>
   <a href='https://www.youtube.com/watch?v=C5MCig31mpg'><img width = '49%' src='AppPizzeria3_low.gif'/></a>
+   <a href='#imgE3'><img id='imgE3' width = '49%' src='AppPizzeria3.png'/></a>
 </p>
