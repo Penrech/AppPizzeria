@@ -22,6 +22,13 @@
   <a href='#img4'><img id='img4' width = '49%' src='device-2019-02-05-123438.png'/></a>
 </p>
 
+<h1>Demo *</h1>
+<p style>*A higher quality video opens on YouTube when clicked</p>
 
-<h1>Apk demo</h1>
-<h3>Upcoming...</h3>
+<p align="center">
+  <a href='https://www.youtube.com/watch?v=-EaXq6ROKbI'><img width = '49%' src='AppPizzeria1_low.gif'/></a>
+  <a href='https://www.youtube.com/watch?v=pCmnH_UwlHw'><img width = '49%' src='AppPizzeria2_low.gif'/></a>
+</p>
+<p align="center">
+  <a href='https://www.youtube.com/watch?v=C5MCig31mpg'><img width = '49%' src='AppPizzeria3_low.gif'/></a>
+</p>
