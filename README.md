@@ -1,4 +1,4 @@
-<h1>Restaurant menu demo app</h1><br>
+<h1>Restaurant menu demo app</h1>
 <h2>Android (Kotlin)</h2>
 <b>Main tools</b>
 <ul>
