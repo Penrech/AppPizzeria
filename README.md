@@ -29,7 +29,13 @@
   <a href='https://www.youtube.com/watch?v=-EaXq6ROKbI'><img width = '49%' src='AppPizzeria1_low.gif'/></a>
   <a href='#imgE1'><img id='imgE1' width = '49%' src='AppPizzeria1.png'/></a>
 </p>
+<br>
 <p align="center">
+  <a href='#imgE2'><img id='imgE2' width = '49%' src='AppPizzeria2.png'/></a>
   <a href='https://www.youtube.com/watch?v=pCmnH_UwlHw'><img width = '49%' src='AppPizzeria2_low.gif'/></a>
+</p>
+<br>
+<p align="center">
+   <a href='#imgE3'><img id='imgE3' width = '49%' src='AppPizzeria3.png'/></a>
   <a href='https://www.youtube.com/watch?v=C5MCig31mpg'><img width = '49%' src='AppPizzeria3_low.gif'/></a>
 </p>
