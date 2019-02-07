@@ -27,8 +27,9 @@
 
 <p align="center">
   <a href='https://www.youtube.com/watch?v=-EaXq6ROKbI'><img width = '49%' src='AppPizzeria1_low.gif'/></a>
-  <a href='https://www.youtube.com/watch?v=pCmnH_UwlHw'><img width = '49%' src='AppPizzeria2_low.gif'/></a>
+  <h3>Prueba</h3>
 </p>
 <p align="center">
+  <a href='https://www.youtube.com/watch?v=pCmnH_UwlHw'><img width = '49%' src='AppPizzeria2_low.gif'/></a>
   <a href='https://www.youtube.com/watch?v=C5MCig31mpg'><img width = '49%' src='AppPizzeria3_low.gif'/></a>
 </p>
