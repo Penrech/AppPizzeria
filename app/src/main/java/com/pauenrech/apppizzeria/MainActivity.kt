@@ -21,9 +21,10 @@ class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
         setSupportActionBar(toolbar)
+
+        supportActionBar!!.title = getString(R.string.menu)
+
         rellenarListaHamburguesas()
         rellenarListaAcompanyamientos()
         rellenarListaIngredientes()

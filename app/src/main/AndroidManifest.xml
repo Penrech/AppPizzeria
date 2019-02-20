@@ -12,7 +12,6 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name=".MainActivity"
-                android:label="@string/menu"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:configChanges="orientation"
                 android:screenOrientation="portrait">
