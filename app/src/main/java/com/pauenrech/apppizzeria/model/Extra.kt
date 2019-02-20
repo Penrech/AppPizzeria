@@ -14,11 +14,10 @@ class Extra constructor(val id: String, val name: String, val price: Float): Par
 
 
     fun getLabelText(): String{
-        if (price == price.toInt().toFloat()) {
-            return "$name (${price.toInt()} €)"
-        }
-        else{
-            return "$name ($price €)"
+        return if (price == price.toInt().toFloat()) {
+            "$name (${price.toInt()} €)"
+        } else{
+            "$name ($price €)"
         }
     }
 

@@ -10,15 +10,13 @@ import com.squareup.picasso.Picasso
 
 class showImageActivity : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.show_image)
 
         //Al final utilicé una libreria para el pinch-to-zoom ya que estaba perdiendo mucho tiempo intenado implementarlo
         //Yo mismo. Aun asi, espero poder implementar algo asi más adelante
-        var inTransition = TransitionInflater.from(this)
+        val inTransition = TransitionInflater.from(this)
             .inflateTransition(R.transition.change_image_from_activity_to_activity)
 
         window.sharedElementEnterTransition = inTransition

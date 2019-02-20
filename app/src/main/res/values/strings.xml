@@ -1,4 +1,29 @@
 <resources>
     <string name="app_name">CiceBurger</string>
     <string name="menu">Carta</string>
+    <string name="total_prize">Precio total: %d €</string>
+    <string name="aconpanyamiento_label">Acompañamiento: %s</string>
+    <string name="no_acompanyamiento">Sin acompañamiento</string>
+    <string name="toppings_pedido_label">Toppings:</string>
+    <string name="no_ingredients_pedido">Sin ingredientes extra</string>
+    <string name="detail_hamburguer_image">Detail hamburguer image</string>
+    <string name="resumen_pedido_title">Resumen pedido</string>
+    <string name="acompa_amiento_label_pedido">Acompañamiento</string>
+    <string name="extras_label_resumen_pedido">Extras</string>
+    <string name="direccion_label_resumen_pedido">Direccion</string>
+    <string name="burger_name_label_resumen_pedido">Burger name</string>
+    <string name="telefono_label_resumen_pedido">Telefono</string>
+    <string name="precio_total_label_resumen_pedido">Precio total</string>
+    <string name="confirmar_button_resumen_pedido">Confirmar</string>
+    <string name="back_to_init_button_label">Inicio</string>
+    <string name="defaul_hambuger_name_card">Nombre hamburguesa</string>
+    <string name="prize_default_card">Precio</string>
+    <string name="hamburger_name_pedir_title">Nombre hamburguesa</string>
+    <string name="acompa_namiento">Acompañamiento</string>
+    <string name="toppings">Toppings</string>
+    <string name="direction">Dirección</string>
+    <string name="phone">Teléfono</string>
+    <string name="pedir">Pedir</string>
+    <string name="default_dummy_total_to_pay">Total a pagar : 20 €</string>
+    <string name="default_radioButton_label">Prueba</string>
 </resources>

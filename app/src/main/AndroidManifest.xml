@@ -13,7 +13,9 @@
         <activity
                 android:name=".MainActivity"
                 android:label="@string/menu"
-                android:theme="@style/AppTheme.NoActionBar">
+                android:theme="@style/AppTheme.NoActionBar"
+                android:configChanges="orientation"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -26,24 +28,21 @@
                 android:resource="@array/preloaded_fonts"/>
 
         <activity
-                android:name=".ingredientesActivity"
-                android:theme="@style/AppTheme.NoActionBar">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-            -->
+                android:name=".IngredientesActivity"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:configChanges="orientation"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".showImageActivity"
                 android:theme="@style/AppTheme.NoActionBar.BigImage">
         </activity>
-        <activity android:name=".Resumen"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="Resumen pedido">
+        <activity
+                android:name=".Resumen"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:label="Resumen pedido"
+                android:configChanges="orientation"
+                android:screenOrientation="portrait">
         </activity>
     </application>
 

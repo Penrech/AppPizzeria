@@ -10,7 +10,8 @@
     <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent" android:background="@color/colorPrimaryDark">
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimaryDark">
 
         <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/collapsing_toolbar"
@@ -26,7 +27,8 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimaryDark"
                 app:title="@string/menu"
-                app:layout_scrollFlags="scroll|enterAlways" app:titleTextColor="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextColor="@color/colorPrimary"
                 app:titleTextAppearance="@style/ToolbarFont"/>
 
     </android.support.design.widget.AppBarLayout>

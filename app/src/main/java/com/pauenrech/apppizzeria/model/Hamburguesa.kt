@@ -3,7 +3,6 @@ package com.pauenrech.apppizzeria.model
 import android.os.Parcel
 import android.os.Parcelable
 
-
 class Hamburguesa constructor(val nombreHamburguesa: String, val precioHamburguesa : Float, val imagenHamburguesa : Int):
     Parcelable {
 
@@ -11,15 +10,13 @@ class Hamburguesa constructor(val nombreHamburguesa: String, val precioHamburgue
         source.readString(),
         source.readFloat(),
         source.readInt()
-
     )
 
     fun getPriceText(): String{
-        if (precioHamburguesa == precioHamburguesa.toInt().toFloat()) {
-            return "${precioHamburguesa.toInt()} €"
-        }
-        else{
-            return "$precioHamburguesa €"
+        return if (precioHamburguesa == precioHamburguesa.toInt().toFloat()) {
+            "${precioHamburguesa.toInt()} €"
+        } else{
+            "$precioHamburguesa €"
         }
     }
 

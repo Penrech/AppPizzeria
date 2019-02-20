@@ -12,7 +12,6 @@ import com.pauenrech.apppizzeria.model.Extra
 import com.pauenrech.apppizzeria.viewHolders.HamburguesaViewHolder
 import com.pauenrech.apppizzeria.model.Hamburguesa
 
-
 class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaListAdapterClickListener {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaList
 
         setSupportActionBar(toolbar)
         rellenarListaHamburguesas()
-        rellenarListaAcompañamientos()
+        rellenarListaAcompanyamientos()
         rellenarListaIngredientes()
 
         layoutManager = LinearLayoutManager(this)
@@ -39,20 +38,20 @@ class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaList
 
 
     object ListaHamburgesas{
-        public var hamburguesas: ArrayList<Hamburguesa>? = null
+        var hamburguesas: ArrayList<Hamburguesa>? = null
     }
 
-    object ListaAcompañamientos{
-        public var acompañamientos: ArrayList<Extra>? = null
+    object ListaAcompanyamientos{
+        var acompanyamientos: ArrayList<Extra>? = null
     }
 
     object ListaIngredientes{
-        public var ingredientes: ArrayList<Extra>? = null
+        var ingredientes: ArrayList<Extra>? = null
     }
 
 
     //He querido simular el hecho de que se descargaran todos los datos desde un servidor y luego se printaran en las activities correspondientes
-    fun rellenarListaHamburguesas(){
+    private fun rellenarListaHamburguesas(){
 
         ListaHamburgesas.hamburguesas = arrayListOf(
             Hamburguesa("300 (gr) Beef Burger",10.99f, R.drawable.beef_burguer),
@@ -65,16 +64,16 @@ class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaList
         )
     }
 
-    fun rellenarListaAcompañamientos(){
+    private fun rellenarListaAcompanyamientos(){
 
-        ListaAcompañamientos.acompañamientos = arrayListOf(
+        ListaAcompanyamientos.acompanyamientos = arrayListOf(
             Extra("acomp1","Ensalada",2f),
             Extra("acomp2","Patata asada", 4f),
             Extra("acomp3","Patatas fritas",3f)
         )
     }
 
-    fun rellenarListaIngredientes(){
+    private fun rellenarListaIngredientes(){
 
         ListaIngredientes.ingredientes = arrayListOf(
             Extra("extra1","Salsa barbacoa",0.5f),
@@ -92,17 +91,12 @@ class MainActivity : AppCompatActivity(), HamburguesaListAdapter.HamburguesaList
         onStartNewActivity()
     }
 
-    override fun finish() {
-        super.finish()
-    }
-
-
-    protected fun onStartNewActivity() {
+    private fun onStartNewActivity() {
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
     }
 
     override fun hamburguesaItemClicked(id: Int) {
-        val intentToDetails = Intent(this, ingredientesActivity::class.java)
+        val intentToDetails = Intent(this, IngredientesActivity::class.java)
         intentToDetails.putExtra("position",id)
         startActivity(intentToDetails)
     }

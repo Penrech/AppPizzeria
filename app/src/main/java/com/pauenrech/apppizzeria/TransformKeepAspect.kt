@@ -3,7 +3,6 @@ package com.pauenrech.apppizzeria
 import android.graphics.Bitmap
 import com.squareup.picasso.Transformation
 
-
 class BitmapTransform(private val maxWidth: Int, private val maxHeight: Int) : Transformation {
 
     override fun transform(source: Bitmap): Bitmap {

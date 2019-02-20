@@ -7,7 +7,6 @@ import com.pauenrech.apppizzeria.R
 import com.pauenrech.apppizzeria.model.Hamburguesa
 import com.pauenrech.apppizzeria.viewHolders.HamburguesaViewHolder
 
-
 class HamburguesaListAdapter (val hamburguesas: ArrayList<Hamburguesa>, val clickListener: HamburguesaListAdapterClickListener): RecyclerView.Adapter<HamburguesaViewHolder>() {
 
     interface HamburguesaListAdapterClickListener{
@@ -27,8 +26,8 @@ class HamburguesaListAdapter (val hamburguesas: ArrayList<Hamburguesa>, val clic
 
     override fun onBindViewHolder(holder: HamburguesaViewHolder, p1: Int) {
         holder.nombre.text = hamburguesas[p1].nombreHamburguesa
-        holder.setPrice(hamburguesas[p1].precioHamburguesa!!,hamburguesas[p1].getPriceText())
-        holder.setImage(hamburguesas[p1].imagenHamburguesa!!,200,200)
+        holder.setPrice(hamburguesas[p1].precioHamburguesa,hamburguesas[p1].getPriceText())
+        holder.setImage(hamburguesas[p1].imagenHamburguesa,200,200)
         holder.itemView.setOnClickListener {
             clickListener.hamburguesaItemClicked(p1)
         }

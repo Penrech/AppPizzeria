@@ -15,34 +15,33 @@ import com.pauenrech.apppizzeria.viewHolders.CustomRadioGroupViewHolder
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.pedir_layout.*
 
-
-class ingredientesActivity : AppCompatActivity()
+class IngredientesActivity : AppCompatActivity()
     , Pedido.PedidoChangePriceListener
     , CustomCheckboxGroupAdapter.ChangeToppingListener
     , CustomRadioGroupAdapter.ChangeSnackListener{
 
-    //Para printar tanto la lista de acompañamientos como la de ingredientes extra, he utilizado recyclerView
+    //Para printar tanto la lista de acompanyamientos como la de ingredientes extra, he utilizado recyclerView
     //Sin la caracteristica de scroll activiada
 
-    var snackAdapter : CustomRadioGroupAdapter? = null
-    var snackLayoutManager: NoScrollLinearLayoutManager? = null
-    var toppingAdapter : CustomCheckboxGroupAdapter? = null
-    var toppingLayoutManager: NoScrollGridLayoutManager? = null
-    var pedido: Pedido? = null
+    private var snackAdapter : CustomRadioGroupAdapter? = null
+    private var snackLayoutManager: NoScrollLinearLayoutManager? = null
+    private var toppingAdapter : CustomCheckboxGroupAdapter? = null
+    private var toppingLayoutManager: NoScrollGridLayoutManager? = null
+    private var pedido: Pedido? = null
 
     companion object {
-        val HAMBURGUESA_RESUM = "hamburguesa"
-        val IMAGEN_RESUM = "imagen_hamburguesa"
-        val ACOMPAÑAMIENTOS_RESUM = "acompañamientos"
-        val TOPPINGS_RESUM = "toppings"
-        val DIRECCION_RESUM = "direccion"
-        val TELEFONO_RESUM = "telefono"
-        val PRECIO_RESUM = "precio"
+        const val HAMBURGUESA_RESUM = "hamburguesa"
+        const val IMAGEN_RESUM = "imagen_hamburguesa"
+        const val ACOMPANYAMIENTOS_RESUM = "acompanyamientos"
+        const val TOPPINGS_RESUM = "toppings"
+        const val DIRECCION_RESUM = "direccion"
+        const val TELEFONO_RESUM = "telefono"
+        const val PRECIO_RESUM = "precio"
     }
 
-    var hamburguesaSeleccionada: Hamburguesa? = null
-    var imagen: Int? = null
-    var nombre: String? = null
+    private var hamburguesaSeleccionada: Hamburguesa? = null
+    private var imagen: Int? = null
+    private var nombre: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +49,7 @@ class ingredientesActivity : AppCompatActivity()
 
         setSupportActionBar(toolbar_ingredients)
 
-        snackAdapter = CustomRadioGroupAdapter(MainActivity.ListaAcompañamientos.acompañamientos!!,this as CustomRadioGroupAdapter.ChangeSnackListener)
+        snackAdapter = CustomRadioGroupAdapter(MainActivity.ListaAcompanyamientos.acompanyamientos!!,this as CustomRadioGroupAdapter.ChangeSnackListener)
         snackLayoutManager = NoScrollLinearLayoutManager(this)
         toppingAdapter = CustomCheckboxGroupAdapter(MainActivity.ListaIngredientes.ingredientes!!,this as CustomCheckboxGroupAdapter.ChangeToppingListener)
         toppingLayoutManager = NoScrollGridLayoutManager(this,2)
@@ -64,9 +63,9 @@ class ingredientesActivity : AppCompatActivity()
 
         hamburguesaSeleccionada = MainActivity.ListaHamburgesas.hamburguesas!![intent.getIntExtra("position",0)]
 
-        pedido = Pedido(hamburguesaSeleccionada!!,this)
+        pedido = Pedido(this, hamburguesaSeleccionada!!,this)
 
-        imagen = hamburguesaSeleccionada!!.imagenHamburguesa!!
+        imagen = hamburguesaSeleccionada!!.imagenHamburguesa
         nombre = hamburguesaSeleccionada!!.nombreHamburguesa
 
         Picasso.get().load(imagen!!).into(imageDetail_top)
@@ -83,11 +82,11 @@ class ingredientesActivity : AppCompatActivity()
         onLeaveThisActivity()
     }
 
-    protected fun onLeaveThisActivity() {
+    private fun onLeaveThisActivity() {
         overridePendingTransition(R.anim.slide_back_in, R.anim.slide_back_out)
     }
 
-    protected fun onStartNewActivity() {
+    private fun onStartNewActivity() {
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
     }
 
@@ -110,7 +109,7 @@ class ingredientesActivity : AppCompatActivity()
         val intent = Intent(this,Resumen::class.java)
         intent.putExtra(HAMBURGUESA_RESUM,pedido!!.hamburguesaSeleccionada.nombreHamburguesa)
         intent.putExtra(IMAGEN_RESUM,pedido!!.hamburguesaSeleccionada.imagenHamburguesa)
-        intent.putExtra(ACOMPAÑAMIENTOS_RESUM,pedido!!.resumenAcompañamiento())
+        intent.putExtra(ACOMPANYAMIENTOS_RESUM,pedido!!.resumenAcompanyamiento())
         intent.putExtra(TOPPINGS_RESUM,pedido!!.resumenIngredientes())
         intent.putExtra(DIRECCION_RESUM,pedido!!.direccion)
         intent.putExtra(TELEFONO_RESUM,pedido!!.telefono)
@@ -120,16 +119,12 @@ class ingredientesActivity : AppCompatActivity()
 
     //Esta interfaz proviene de la clase Pedido y es para cambiar el texto del textView que indica el precio de forma automatica
     override fun changePriceText(actualPrice: Float) {
-            if (actualPrice == actualPrice.toInt().toFloat()) {
-                totalPriceTextView.text = "Precio total: ${actualPrice.toInt()} €"
-            } else {
-                totalPriceTextView.text = "Precio total: $actualPrice €"
-            }
+            totalPriceTextView.text = String.format(getString(R.string.total_prize),actualPrice.toInt())
     }
 
     //Estas dos interfaces gestionan junto con sus clases y adapters si se añaden o eliminan ingredientes.
     //Ambos son muy similares y estuve pensando si hacer una clase general para los dos, pero complicaba las cosas
-    // sobretodo a la hora de pasar el parametro al recyclerView.Adapter<Este parametro> así que hice dos de todo de ambos
+    // sobretodo a la hora de pasar el parametro al recyclerView.Adapter<Este parametro> así que hice dos de to_do de ambos
     override fun onChangeTopping(isCheck: Boolean, topping: Extra) {
         if (isCheck){
             pedido!!.addIngrediente(topping)
@@ -143,10 +138,10 @@ class ingredientesActivity : AppCompatActivity()
         for (rb in CustomRadioGroupViewHolder.radioButtonsArrayList){
             if(rb == radioButton){
                 if (rb.isChecked){
-                    pedido!!.addAcompañamiento(snack)
+                    pedido!!.addAcompanyamiento(snack)
                 }
                 else{
-                    pedido!!.removeAcompañamiento()
+                    pedido!!.removeAcompanyamiento()
                 }
             }
             else{

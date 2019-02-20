@@ -14,10 +14,10 @@ import kotlinx.android.synthetic.main.activity_resumen.*
 class Resumen : AppCompatActivity() {
 
 
-    var escenaIncial: Scene? = null
-    var escenaFinal: Scene? = null
-    var submited = false
-    var transitionManager: Transition? = null
+    private var escenaIncial: Scene? = null
+    private var escenaFinal: Scene? = null
+    private var submited = false
+    private var transitionManager: Transition? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,27 +35,22 @@ class Resumen : AppCompatActivity() {
         transitionManager = TransitionInflater.from(this)
             .inflateTransition(R.transition.submit)
 
-        val hamburguesa = intent.getStringExtra(ingredientesActivity.HAMBURGUESA_RESUM)
-        val imagen_hamburguesa = intent.getIntExtra(ingredientesActivity.IMAGEN_RESUM , R.drawable.ic_launcher_background)
-        val acompañamientos = intent.getStringExtra(ingredientesActivity.ACOMPAÑAMIENTOS_RESUM)
-        val toppings = intent.getStringExtra(ingredientesActivity.TOPPINGS_RESUM)
-        val direccion = intent.getStringExtra(ingredientesActivity.DIRECCION_RESUM)
+        val hamburguesa = intent.getStringExtra(IngredientesActivity.HAMBURGUESA_RESUM)
+        val imagenHamburguesa = intent.getIntExtra(IngredientesActivity.IMAGEN_RESUM , R.drawable.ic_launcher_background)
+        val acompañamientos = intent.getStringExtra(IngredientesActivity.ACOMPANYAMIENTOS_RESUM)
+        val toppings = intent.getStringExtra(IngredientesActivity.TOPPINGS_RESUM)
+        val direccion = intent.getStringExtra(IngredientesActivity.DIRECCION_RESUM)
 
-        val telefono = intent.getLongExtra(ingredientesActivity.TELEFONO_RESUM,666666666)
-        val precio = intent.getFloatExtra(ingredientesActivity.PRECIO_RESUM,0f)
+        val telefono = intent.getLongExtra(IngredientesActivity.TELEFONO_RESUM,666666666)
+        val precio = intent.getFloatExtra(IngredientesActivity.PRECIO_RESUM,0f)
 
-        Picasso.get().load(imagen_hamburguesa).into(imagenTopResumen)
+        Picasso.get().load(imagenHamburguesa).into(imagenTopResumen)
         resumenBurgerName.text = hamburguesa
         resumenAcompañamiento.text = acompañamientos
         resumenExtras.text = toppings
         resumenDireccion.text = direccion
         resumenTelefono.text = "$telefono"
-        if (precio == precio.toInt().toFloat()) {
-            resumenPrecio.text = "Precio total: ${precio.toInt()} €"
-        } else {
-            resumenPrecio.text = "Precio total: $precio €"
-        }
-
+        resumenPrecio.text = String.format(getString(R.string.total_prize),precio.toInt())
 
     }
 
@@ -93,11 +88,11 @@ class Resumen : AppCompatActivity() {
         onLeaveThisActivity()
     }
 
-    protected fun onLeaveThisActivity() {
+    private fun onLeaveThisActivity() {
         overridePendingTransition(R.anim.slide_back_in, R.anim.slide_back_out)
     }
 
-    protected fun onStartNewActivity() {
+    private fun onStartNewActivity() {
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
     }
 }
