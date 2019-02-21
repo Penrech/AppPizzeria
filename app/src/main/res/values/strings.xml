@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CiceBurger</string>
+    <string name="app_name">CiceBurger [Demo]</string>
     <string name="menu">Carta</string>
     <string name="total_prize">Precio total: %d €</string>
     <string name="aconpanyamiento_label">Acompañamiento: %s</string>
